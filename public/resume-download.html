@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Download Resume</title>
+    <style>
+      body{font-family:Inter,Arial;padding:40px;text-align:center;background:var(--bg, #fff7f7);color:var(--primary,#10203a);margin:0}
+      a.button{display:inline-block;padding:12px 20px;background:var(--primary,#10203a);color:#fff;border-radius:8px;text-decoration:none;margin-top:20px}
+      /* geometric background */
+      .bg-geo{position:absolute;inset:0;pointer-events:none;z-index:0}
+      .content{position:relative;z-index:10;max-width:900px;margin:60px auto}
+      .qr-wrap{display:inline-block;position:relative}
+      .scanner-bar{position:absolute;left:8%;right:8%;height:8px;background:linear-gradient(90deg,transparent,rgba(255,92,168,0.5),transparent);top:0;animation:scan 1.6s linear infinite}
+      @keyframes scan{0%{transform:translateY(-120%)}50%{transform:translateY(120%)}100%{transform:translateY(-120%)}}
+    </style>
+  </head>
+  <body>
+    <svg class="bg-geo" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1200 600">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0" stop-color="#ffdede"/>
+          <stop offset="1" stop-color="#fff7f7"/>
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="600" fill="url(#g1)" />
+      <polygon points="0,120 240,0 480,120 720,0 960,120 1200,0 1200,600 0,600" fill="#ffecec" opacity="0.6" />
+      <circle cx="960" cy="120" r="120" fill="#ff9fc7" opacity="0.06" />
+      <rect x="60" y="320" width="420" height="200" rx="20" fill="#ffdede" opacity="0.04" transform="rotate(-6 270 420)"/>
+    </svg>
+    <div class="content">
+      
+      <h1>Download Resume</h1>
+      <p>Click the button below to download the resume to your device.</p>
+      <a class="button" href="/resume.pdf" download>Download Resume</a>
+      <div style="margin-top:30px">
+        <p>Or scan this QR code on your phone to download:</p>
+        <div class="qr-wrap">
+          <a href="/resume.pdf" download>
+            <img src="/resume-qr.png" alt="QR code to download resume" style="width:180px;height:180px;object-contain;display:block"/>
+          </a>
+          <div class="scanner-bar" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div style="margin-top:24px">
+        <a href="/" class="button" style="background:transparent;color:var(--primary);border:1px solid rgba(16,32,58,0.08);">Home</a>
+      </div>
+    </div>
+    <script>
+      // auto-download on mobile devices when opening from QR
+      (function(){
+        try{
+          var isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+          if(isMobile){
+            // wait a short moment to allow camera/scan redirect
+            setTimeout(function(){
+              var a = document.querySelector('a.button') || document.querySelector('a[download]')
+              if(a){
+                // trigger download
+                a.click()
+              }
+            }, 700)
+          }
+        }catch(e){console.warn(e)}
+      })()
+
+      // no close button per request
+    </script>
+  </body>
+</html>

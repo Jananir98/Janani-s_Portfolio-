@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:wght@700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #fff7f7;
+  --surface: #fceff0;
+  --primary: #10203a;
+  --accent: #ff5ca8;
+}
+
+@layer base {
+  body {
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: var(--bg);
+    color: var(--primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,h2,h3,h4 {
+    font-family: Merriweather, serif;
+    color: var(--primary);
+  }
+
+  a { color: inherit; text-decoration: none }
+}
+
+
+
