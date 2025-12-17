@@ -21,10 +21,11 @@ export default function Contact() {
 
     <a
       href="tel:8220909100"
-      aria-label="Call Janani"
+      aria-label="Call Janani at 8220909100"
+      title="Call Janani"
       className="px-6 py-4 bg-card rounded-xl hover:shadow-glow transition"
     >
-      📞 8220909100
+      📞 XXXXXX
     </a>
 
     <a
