@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import heroImg from '../assets/computer1.png'
 
 export default function Hero() {
   return (
@@ -58,7 +59,7 @@ Frontend Developer building scalable, high-performance React applications with A
           <div className="md:col-span-2 flex items-center">
             {/* Hero illustration (bigger, no background/shadow) */}
             <img
-              src="/src/assets/computer1.png"
+              src={heroImg}
               alt="computer illustration"
               className="w-full h-auto md:h-[420px] object-contain rounded-none shadow-none bg-transparent"
             />
