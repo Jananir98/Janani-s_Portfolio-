@@ -20,12 +20,12 @@ export default function Contact() {
     </a>
 
     <a
-      href="tel:8220909100"
-      aria-label="Call Janani at 8220909100"
+      href="tel"
+      aria-label="Call Janani"
       title="Call Janani"
       className="px-6 py-4 bg-card rounded-xl hover:shadow-glow transition"
     >
-      📞 XXXXXX
+      📞 XXXXXXXXXX
     </a>
 
     <a
